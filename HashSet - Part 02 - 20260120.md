@@ -1,4 +1,4 @@
-**Problem Statement:**
+**Problem Statement1:**
 Given four integer arrays nums1, nums2, nums3, and nums4 all of length n, return the number of tuples (i, j, k, l) such that:
 0 <= i, j, k, l < n
 nums1[i] + nums2[j] + nums3[k] + nums4[l] == 0
@@ -32,4 +32,30 @@ class Solution:
                 ans+=v*seen34[-k]
                 
         return ans
+```
+**Problem Statement1:**
+Given two strings ransomNote and magazine, return true if ransomNote can be constructed by using the letters from magazine and false otherwise.
+Each letter in magazine can only be used once in ransomNote.
+
+**Example 1:**
+Input: ransomNote = "a", magazine = "b"
+Output: false
+
+**Example 2:**
+Input: ransomNote = "aa", magazine = "ab"
+Output: false
+
+**Solution:**
+```Python
+class Solution:
+    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+        from collections import Counter
+        R=Counter(ransomNote)
+        M=Counter(magazine)
+        for k, v in R.items():
+            if v<=M[k]:
+                continue
+            else:
+                return False
+        return True
 ```
