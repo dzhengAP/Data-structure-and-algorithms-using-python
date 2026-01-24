@@ -49,14 +49,14 @@ class Solution:
 ```Python
 from collections import Counter
 class Solution:
-    def TopK(self, nums,k) -> int:
+    def TopK(self, nums,k):
         ans=[]
         n=len(nums)
-        bucket=[[] for_ in range(n+1)]
+        bucket=[[] for _ in range(n+1)]
         count=Counter(nums)
         for num, freq in count.items():
             bucket[freq].append(num)
-        for i in range(n+1, -1, -1):
+        for i in range(n, -1, -1):
             for num in bucket[i]:
                 ans.append(num)
                 if len(ans)==k:
