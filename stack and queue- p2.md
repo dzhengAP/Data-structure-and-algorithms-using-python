@@ -44,7 +44,6 @@ class Solution:
                     dq.popleft()
             r+=1
         return ans
-        
 ```
 **TopK**
 ```Python
@@ -62,5 +61,4 @@ class Solution:
                 ans.append(num)
                 if len(ans)==k:
                     return ans
-        
 ```
